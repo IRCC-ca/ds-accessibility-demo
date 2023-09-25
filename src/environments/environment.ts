@@ -1,9 +1,15 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  version: '1.0.0' + '-dev',
+  serverUrl: '/api',
+  defaultLanguage: 'en-US',
+  supportedLanguages: ['en-US', 'fr-FR'],
+
+  baseUrl: '',
+
+  CognitoRegion: '',
+  CognitoUserPoolID: '',
+  CognitoWebClientID: '',
 };
 
 /*

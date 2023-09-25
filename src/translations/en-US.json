@@ -1,0 +1,49 @@
+{
+"OPPOSITE_LANGUAGE": "Français",
+
+  "ROUTES": {
+    "Home": "home",
+    "Home-alt": "acceuil",
+    "Login": "login",
+    "Login-alt": "connexion"
+  },
+
+
+  "LoginPage": {
+    "signIn": "Sign in",
+    "username": "Email Address",
+    "password": "Password",
+    "recover": "Recover username",
+    "reset": "Reset password",
+    "invalidBanner": "Sorry, we don't recognize your username and password. Can we help you recover username or reset password?"
+  },
+
+  "ERRORS": {
+    "required": "This field is required",
+    "pattern": "Incorrect email format"
+  },
+
+  "APP_NAME": "SWAT Project Seed",
+  "About": "About",
+  "Hello world !": "Hello world !",
+  "Home": "Home",
+  "Logged in as": "Logged in as",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Password": "Password",
+  "Username": "Username",
+  "Username or password incorrect.": "Username or password incorrect.",
+  "Remember me": "Remember me",
+  "Version": "Version",
+  "Email Address": "Email",
+  "Email or password incorrect.": "Email address or password incorrect.",
+  "This field is required": "This field is required",
+  "Validation Error Banner": "Sorry, we don’t recognize your username or password. Please try again or recover your username or reset password.",
+  "Max Attempts Error Banner": "You’ve reached maximum attempts. Try again in one hour.",
+  "Sign in": "Sign in",
+  "EnterEmail": "Enter your email and password to continue to your account.",
+  "Forgot username": "Forgot username",
+  "Forgot password": "Forgot password",
+  "No account": "Don’t have an account?",
+  "Register here": "Register here"
+}

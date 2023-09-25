@@ -1,0 +1,49 @@
+{
+  "OPPOSITE_LANGUAGE": "English",
+
+  "ROUTES": {
+    "Home": "acceuil",
+    "Home-alt": "home",
+    "Login": "connexion",
+    "Login-alt": "login"
+  },
+
+  "LoginPage": {
+    "signIn": "FR-Sign in",
+    "username": "FR-Username",
+    "password": "FR-Password",
+    "recover": "FR-Recover username",
+    "reset": "FR-Reset password",
+    "invalidBanner": "**FR** - Sorry, we don't recognize your username and password. Can we help you recover username or reset password?"
+  },
+
+  "ERRORS": {
+    "required": "**FR** - This field is required",
+    "pattern": "**FR** - Incorrect email format"
+
+  },
+
+  "APP_NAME": "SWAT Project Seed",
+  "About": "A propos",
+  "Hello world !": "Bonjour le monde !",
+  "Home": "Accueil",
+  "Logged in as": "Connecté en tant que",
+  "Login": "Connexion",
+  "Logout": "Déconnexion",
+  "Password": "Mot de passe",
+  "Username": "Identifiant",
+  "Username or password incorrect.": "Identifiant ou mot de passe incorrect.",
+  "Remember me": "Rester connecté",
+  "Version": "Version",
+  "Email Address": "Adresse Courriel",
+  "Email or password incorrect.": "Adresse courriel ou mot de passe incorrect.",
+  "This field is required": "Ce champ est obligatoire",
+  "Validation Error Banner": "Désolé, nous ne reconnaissons pas votre nom d'utilisateur ou votre mot de passe. Veuillez réessayer ou récupérer votre nom d'utilisateur ou réinitialiser votre mot de passe.",
+  "Max Attempts Error Banner": "Vous avez atteint le nombre maximal de tentatives. Réessayez dans une heure.",
+  "Sign in": "S'identifier",
+  "EnterEmail": "Entrez votre courriel et votre mot de passe pour accéder à votre compte.",
+  "Forgot username": "Identifiant oublié",
+  "Forgot password": "Mot de passe oublié",
+  "No account": "Vous n'avez pas de compte?",
+  "Register here": "Inscrivez-vous ici"
+}
