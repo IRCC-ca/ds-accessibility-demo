@@ -4,6 +4,7 @@ import { LanguageSwitchService } from '@app/@shared/language-switch/language-swi
 import { TranslateService } from '@ngx-translate/core';
 
 import { Location } from '@angular/common';
+import { LanguageHeaderFooterSwitchService } from 'ircc-ds-angular-component-library';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class ShellComponent implements OnInit {
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: object,
     private location: Location,
-    private languageSwitchButton: LanguageSwitchService
+    private languageSwitchButton: LanguageHeaderFooterSwitchService
   ) { }
 
   /** Sets the alt language string and subscribes to language changes that occur if the link is clicked */
@@ -35,7 +36,7 @@ export class ShellComponent implements OnInit {
       this.setAltLangURL();
     });
 
-    this.languageSwitchButton.altLangLinkObs.subscribe(response => {
+    this.languageSwitchButton.languageClickObs$.subscribe(response => {
       console.log('response: ', response);
       if (response) this.changeLang(); //Has to ignore the first response. 
       //TODO: This can be changed to simply (response) once the library changes have been published
