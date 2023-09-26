@@ -29,8 +29,6 @@ export class HomeComponent implements OnInit {
     const curLang = this.translate.currentLang;
     this.translate.use((curLang === 'en-US') || (curLang === 'en') ? 'en-US' : 'fr-FR');
     const lang = ((curLang === 'en-US') || (curLang === 'en') ? 'en' : 'fr');
-    console.log('327', curLang, ('/' + lang + '/' + this.translate.instant('ROUTES.AccessibilityDemo')))
-
     // return ''
     return ('/' + lang + '/' + this.translate.instant('ROUTES.PersonalInfo'));
   }

@@ -37,8 +37,7 @@ export class ShellComponent implements OnInit {
     });
 
     this.languageSwitchService.languageClickObs$.subscribe(response => {
-      console.log('response: ', response);
-      if (response) this.changeLang(); //Has to ignore the first response. 
+      if (response) this.changeLang();  
       //TODO: This can be changed to simply (response) once the library changes have been published
     });
   }
@@ -49,7 +48,6 @@ export class ShellComponent implements OnInit {
     const curLang = this.translate.currentLang;
     this.translate.use((curLang === 'en-US') || (curLang === 'en') ? 'fr-FR' : 'en-US');
     // Changes the html lang attribute
-    console.log((curLang === "en-US") || (curLang === 'en') ? 'fr' : 'en');
     document.documentElement.lang = ((curLang === "en-US") || (curLang === 'en') ? 'fr' : 'en');
     // Pushes page into history to allow the use of the 'Back' button on browser
     window.history.pushState('', '', this.altLangURL);
@@ -58,7 +56,6 @@ export class ShellComponent implements OnInit {
 
   //Alt-language url key must be in the corresponding language, but have the french work
   setAltLangURL() {
-    console.log(this.translate.currentLang);
     this.altLangURL = ((this.translate.currentLang === "en-US") || (this.translate.currentLang === 'en') ? 'fr' : 'en');
     if (this.altPathKey) this.altLangURL += '/' + this.translate.instant('ROUTES.' + this.altPathKey);
   }
