@@ -7,7 +7,6 @@ const routes: Routes = [
     {
       path: 'en',
       children: [
-        { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
         { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
         //This will direct to home, which will be redirected by the guard to the login page if required
         { path: '**', redirectTo: 'home' },
@@ -17,7 +16,6 @@ const routes: Routes = [
       path: 'fr',
       children: [
         { path: 'connexion', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-        { path: 'acceuil', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
         //This will direct to home, which will be redirected by the guard to the login page if required
         { path: '**', redirectTo: 'acceuil' }
       ]
