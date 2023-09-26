@@ -10,10 +10,11 @@
     "lint": "ng lint && stylelint \"src/**/*.scss\"",
     "test": "npm run write:env -s && ng test",
     "test:ci": "npm run write:env -s && npm run lint -s && ng run ds-accessibility-demo:test:ci",
-    "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean --sort",
-    "docs": "hads ./docs -o",
     "write:env": "ngx-scripts env npm_package_version",
-    "generate": "ng generate"
+    "generate": "ng generate",
+    "translations:toJson": "node ./src/translations/ngx-translation-extract.js -r -i src/translations/DS-AccessibilityDemo-Strings.txt -l en-US,fr-FR -o src/translations",
+    "translations:toText": "node src/translations/ngx-translation-extract.js -l en-US,fr-FR -i src/translations/ -o src/translations/DS-AccessibilityDemo-Strings.txt --clean ",
+    "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/en-US.json ./src/translations/fr-FR.json --clean --sort --format namespaced-json --marker _"
   },
   "dependencies": {
     "@angular/animations": "~14.2.5",
@@ -39,7 +40,9 @@
     "ircc-ds-angular-component-library": "^1.1.5",
     "rxjs": "^7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "fast-csv": "~4.3.6",
+    "dot-object": "~2.1.4"
   },
   "devDependencies": {
     "@angular-builders/jest": "^14.0.1",
