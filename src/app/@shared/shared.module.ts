@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { LoaderComponent } from './loader/loader.component';
-import { IrccDsAngularComponentLibraryModule } from 'ircc-ds-angular-component-library';
+import { IrccDsAngularComponentsSharedModule } from 'ircc-ds-angular-component-library';
 import { InputErrorComponent } from './input-error/input-error.component'
 
 
@@ -11,7 +11,7 @@ import { InputErrorComponent } from './input-error/input-error.component'
   imports: [
     TranslateModule,
     CommonModule,
-    IrccDsAngularComponentLibraryModule,
+    IrccDsAngularComponentsSharedModule,
   ],
   declarations: [
     LoaderComponent,
@@ -19,7 +19,7 @@ import { InputErrorComponent } from './input-error/input-error.component'
   ],
   exports: [
     LoaderComponent,
-    IrccDsAngularComponentLibraryModule,
+    IrccDsAngularComponentsSharedModule,
   ]
 })
 export class SharedModule { }

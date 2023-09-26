@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { LanguageSwitchService } from '@app/@shared/language-switch/language-switch.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageSwitchButtonService } from 'ircc-ds-angular-component-library';
+
 import { Location } from '@angular/common';
 
 
@@ -12,37 +12,37 @@ import { Location } from '@angular/common';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-/** String for storing the URL of the page with the alternative language set */
-altLangURL:string =  "";
-altPathKey:string = "";
+  /** String for storing the URL of the page with the alternative language set */
+  altLangURL: string = "";
+  altPathKey: string = "";
 
-/** Boolean for whether the current window size is mobile or not */
-isMobile = false;
+  /** Boolean for whether the current window size is mobile or not */
+  isMobile = false;
 
-constructor(
-  private translate: TranslateService,
-  private altLang: LanguageSwitchService,
-  private router: Router,
-  @Inject(PLATFORM_ID) private platformId: object,
-  private location: Location,
-  private languageSwitchButton: LanguageSwitchButtonService
-) {}
+  constructor(
+    private translate: TranslateService,
+    private altLang: LanguageSwitchService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: object,
+    private location: Location,
+    private languageSwitchButton: LanguageSwitchService
+  ) { }
 
-/** Sets the alt language string and subscribes to language changes that occur if the link is clicked */
-ngOnInit() {
-  this.altLang.getAltLangLink().subscribe((altLang: string) => {
-    this.altPathKey = altLang;
-    this.setAltLangURL();
-  });
+  /** Sets the alt language string and subscribes to language changes that occur if the link is clicked */
+  ngOnInit() {
+    this.altLang.getAltLangLink().subscribe((altLang: string) => {
+      this.altPathKey = altLang;
+      this.setAltLangURL();
+    });
 
-  this.languageSwitchButton.languageClickObs$.subscribe(response => {
-    console.log('response: ', response);
-    if (response) this.changeLang(); //Has to ignore the first response. 
-    //TODO: This can be changed to simply (response) once the library changes have been published
-  });
-}
+    this.languageSwitchButton.altLangLinkObs.subscribe(response => {
+      console.log('response: ', response);
+      if (response) this.changeLang(); //Has to ignore the first response. 
+      //TODO: This can be changed to simply (response) once the library changes have been published
+    });
+  }
 
-/** Toggles language without reloading component */
+  /** Toggles language without reloading component */
   //This currently uses both 'en' and 'en-US' language values, sine in some cases, en is provided in initial load
   changeLang() {
     const curLang = this.translate.currentLang;
@@ -54,7 +54,7 @@ ngOnInit() {
     window.history.pushState('', '', this.altLangURL);
     this.setAltLangURL();
   }
-  
+
   //Alt-language url key must be in the corresponding language, but have the french work
   setAltLangURL() {
     console.log(this.translate.currentLang);
@@ -62,7 +62,7 @@ ngOnInit() {
     if (this.altPathKey) this.altLangURL += '/' + this.translate.instant('ROUTES.' + this.altPathKey);
   }
 
-/** Required to implement OnDestroy, which triggers the UnitDestroyed function */
-ngOnDestroy() { }
+  /** Required to implement OnDestroy, which triggers the UnitDestroyed function */
+  ngOnDestroy() { }
 
 }
