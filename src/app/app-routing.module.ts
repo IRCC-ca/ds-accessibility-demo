@@ -8,16 +8,18 @@ const routes: Routes = [
       path: 'en',
       children: [
         { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+        { path: '', loadChildren: () => import('./accessibility-demo/accessibility-demo.module').then(m => m.AccessibilityDemoModule) },
         //This will direct to home, which will be redirected by the guard to the login page if required
-        { path: '**', redirectTo: 'home' },
+        { path: '**', redirectTo: '' },
       ]
     },
     {
       path: 'fr',
       children: [
         { path: 'connexion', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+        { path: '', loadChildren: () => import('./accessibility-demo/accessibility-demo.module').then(m => m.AccessibilityDemoModule) },
         //This will direct to home, which will be redirected by the guard to the login page if required
-        { path: '**', redirectTo: 'acceuil' }
+        { path: '**', redirectTo: '' },
       ]
     },
     //Has to be last as this is the fallback route
