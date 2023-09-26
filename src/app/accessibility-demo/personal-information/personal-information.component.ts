@@ -85,6 +85,7 @@ export const CITIES_OF_BIRTH_LOVS_ALL: ICityOfBirth[] = [
   styleUrls: ['./personal-information.component.scss']
 })
 export class PersonalInformationComponent implements OnInit {
+  @ViewChild('errorBanner') errorBannerRef?: ElementRef;
   altPathKey = '';
   altLangURL = '';
   form = new FormGroup({});
@@ -128,8 +129,6 @@ export class PersonalInformationComponent implements OnInit {
     content: 'ACC_DEMO.PERSONAL_INFO.ERROR_BANNER.CONTENT',
     rounded: true
   };
-
-  @ViewChild('errorBanner') errorBannerRef?: ElementRef;
 
   familyNameInputConfig: IInputComponentConfig = {
     id: 'family_name_input',
@@ -568,7 +567,7 @@ export class PersonalInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.AccessibilityDemoPrevious')
+      this.translate.instant('ROUTES.BackgroundInfo')
     );
   }
 
@@ -576,7 +575,7 @@ export class PersonalInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.AccessibilityDemoNext')
+      this.translate.instant('ROUTES.PersonalInfo')
     );
   }
 
@@ -590,7 +589,7 @@ export class PersonalInformationComponent implements OnInit {
     );
     const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
     return (
-      '/' + lang + '/' + this.translate.instant('ROUTES.AccessibilityDemo')
+      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
     );
   }
 
