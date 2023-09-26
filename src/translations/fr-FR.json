@@ -4,7 +4,8 @@
 		"Home": "acceuil",
 		"Home-alt": "home",
 		"Login": "connexion",
-		"Login-alt": "login"
+		"Login-alt": "login",
+		"PersonalInfo": "informations-personnelles"
 	},
 	"Version": "Version",
 	"This field is required": "Ce champ est obligatoire",

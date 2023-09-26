@@ -8,3 +8,4 @@ Version	Version	Version
 This field is required	This field is required	Ce champ est obligatoire
 Home.BeginTask	Begin Task	Commencer la tâche
 AccessibilityDemo.Title	Accessibility Demo	Demo d'accessibilité
+ROUTES.PersonalInfo	personal-information	informations-personnelles
