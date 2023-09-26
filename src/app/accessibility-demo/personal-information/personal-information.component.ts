@@ -94,7 +94,6 @@ export class PersonalInformationComponent implements OnInit {
   showSexAtBirthBanner = false;
 
   innerWidth = 0;
-  hamburgerMenuState: boolean | undefined = undefined;
 
   routerSub?: Subscription;
   labelButtonSub?: Subscription;
@@ -283,21 +282,9 @@ export class PersonalInformationComponent implements OnInit {
     ]
   };
 
-  hamburgerDialogXButtonConfig: IIconButtonComponentConfig = {
-    id: 'hamburger_dialog_x_button',
-    category: 'custom',
-    size: 'large',
-    ariaLabel: 'ACC_DEMO.HAMBURGER_ARIA',
-    icon: {
-      class: 'fa-regular fa-x',
-      color: 'var(--text-primary)'
-    }
-  };
-
   allowedNavItemIds: string[] = [
     'progress_indicator_step_0',
-    'progress_indicator_step_1',
-    'hamburger_dialog_x_button'
+    'progress_indicator_step_1'
   ];
 
   constructor(
@@ -463,16 +450,12 @@ export class PersonalInformationComponent implements OnInit {
         this.progressIndicatorConfig.orientation === undefined)
     ) {
       this.progressIndicator.updateOrientation('vertical');
-      if (this.hamburgerMenuState === undefined) {
-        this.hamburgerMenuState = false;
-      }
     } else if (
       this.innerWidth > 980 &&
       (this.progressIndicatorConfig.orientation === 'vertical' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
       this.progressIndicator.updateOrientation('horizontal');
-      this.hamburgerMenuState = undefined;
     }
   }
 
@@ -573,23 +556,6 @@ export class PersonalInformationComponent implements OnInit {
 
       default:
         break;
-    }
-  }
-
-  /**
-   * Open the hamburger menu progress indicator
-   */
-  menuHamburgerButton() {
-    console.log(this.hamburgerMenuState);
-    if (this.hamburgerMenuState !== undefined && !this.hamburgerMenuState) {
-      this.hamburgerMenuState = true;
-      setTimeout(() => {
-        const focus = document.getElementById('hamburger_dialog_x_button');
-        focus?.focus();
-        console.log(focus);
-      }, 50);
-    } else {
-      this.hamburgerMenuState = false;
     }
   }
 
