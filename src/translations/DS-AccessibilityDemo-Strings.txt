@@ -1,37 +1,10 @@
-"termID"	"en-US"	"fr-FR"
-"OPPOSITE_LANGUAGE"	"Français"	"English"
-"ROUTES.Home"	"home"	"acceuil"
-"ROUTES.Home-alt"	"acceuil"	"home"
-"ROUTES.Login"	"login"	"connexion"
-"ROUTES.Login-alt"	"connexion"	"login"
-"LoginPage.signIn"	"Sign in"	"FR-Sign in"
-"LoginPage.username"	"Email Address"	"FR-Username"
-"LoginPage.password"	"Password"	"FR-Password"
-"LoginPage.recover"	"Recover username"	"FR-Recover username"
-"LoginPage.reset"	"Reset password"	"FR-Reset password"
-"LoginPage.invalidBanner"	"Sorry, we don't recognize your username and password. Can we help you recover username or reset password?"	"**FR** - Sorry, we don't recognize your username and password. Can we help you recover username or reset password?"
-"ERRORS.required"	"This field is required"	"**FR** - This field is required"
-"ERRORS.pattern"	"Incorrect email format"	"**FR** - Incorrect email format"
-"APP_NAME"	"SWAT Project Seed"	"SWAT Project Seed"
-"About"	"About"	"A propos"
-"Hello world !"	"Hello world !"	"Bonjour le monde !"
-"Home"	"Home"	"Accueil"
-"Logged in as"	"Logged in as"	"Connecté en tant que"
-"Login"	"Login"	"Connexion"
-"Logout"	"Logout"	"Déconnexion"
-"Password"	"Password"	"Mot de passe"
-"Username"	"Username"	"Identifiant"
-"Username or password incorrect."	"Username or password incorrect."	"Identifiant ou mot de passe incorrect."
-"Remember me"	"Remember me"	"Rester connecté"
-"Version"	"Version"	"Version"
-"Email Address"	"Email"	"Adresse Courriel"
-"Email or password incorrect."	"Email address or password incorrect."	"Adresse courriel ou mot de passe incorrect."
-"This field is required"	"This field is required"	"Ce champ est obligatoire"
-"Validation Error Banner"	"Sorry, we don’t recognize your username or password. Please try again or recover your username or reset password."	"Désolé, nous ne reconnaissons pas votre nom d'utilisateur ou votre mot de passe. Veuillez réessayer ou récupérer votre nom d'utilisateur ou réinitialiser votre mot de passe."
-"Max Attempts Error Banner"	"You’ve reached maximum attempts. Try again in one hour."	"Vous avez atteint le nombre maximal de tentatives. Réessayez dans une heure."
-"Sign in"	"Sign in"	"S'identifier"
-"EnterEmail"	"Enter your email and password to continue to your account."	"Entrez votre courriel et votre mot de passe pour accéder à votre compte."
-"Forgot username"	"Forgot username"	"Identifiant oublié"
-"Forgot password"	"Forgot password"	"Mot de passe oublié"
-"No account"	"Don’t have an account?"	"Vous n'avez pas de compte?"
-"Register here"	"Register here"	"Inscrivez-vous ici"
+termID	en-US	fr-FR
+OPPOSITE_LANGUAGE	Français	English
+ROUTES.Home	home	acceuil
+ROUTES.Home-alt	acceuil	home
+ROUTES.Login	login	connexion
+ROUTES.Login-alt	connexion	login
+Version	Version	Version
+This field is required	This field is required	Ce champ est obligatoire
+Home.BeginTask	Begin Task	Commencer la tâche
+AccessibilityDemo.Title	Accessibility Demo	Demo d'accessibilité

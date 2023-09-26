@@ -1,7 +1,7 @@
 <div class="container">
   <div class="headerContainer"> 
   <h4 class="header"><strong>{{'LoginPage.signIn' | translate}}</strong></h4>
-  <div class="subheader">{{'EnterEmail' | translate}}</div>
+  <div class="subheader">{{'LoginPage.EnterEmail' | translate}}</div>
   <div class="errorBanner" *ngIf="error && !isLoading">
     <ircc-cl-lib-banner [config]="invalidUserBannerConfig"></ircc-cl-lib-banner>
   </div>
@@ -10,7 +10,7 @@
     <div>
 
       <ng-container *ngIf="showMaxAttemptBanner">
-        <ircc-cl-lib-banner body="Max Attempts Error Banner" type="critical"></ircc-cl-lib-banner>>
+        <ircc-cl-lib-banner></ircc-cl-lib-banner>
       </ng-container>
 
       <div class="inputs">
@@ -24,7 +24,7 @@
       <div class="submit-button">
         <button category="primary" size="small" type="submit" [disabled]="isLoading">
           <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
-          <span translate>Sign in</span>
+          <span translate>{{'LoginPage.signIn' | translate }}</span>
         </button>
       </div>
       <div class="recover-reset">
