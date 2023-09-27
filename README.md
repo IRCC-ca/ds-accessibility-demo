@@ -1,4 +1,4 @@
-# SWAT Project Seed FE
+# Design System Component Library - Accessibility Demo
 
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 11.0.0
