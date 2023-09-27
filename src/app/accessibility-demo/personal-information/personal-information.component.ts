@@ -207,12 +207,12 @@ export class PersonalInformationComponent implements OnInit {
     formGroup: this.form,
     label: 'ACC_DEMO.PERSONAL_INFO.DATE_OF_BIRTH.LABEL',
     required: true,
-    // errorMessages: [
-    //   {
-    //     key: 'required',
-    //     errorLOV: 'ACC_DEMO.ERRORS.DOB_REQUIRED'
-    //   }
-    // ],
+    errorMessages: [
+      {
+        key: 'required',
+        errorLOV: 'ACC_DEMO.ERRORS.DOB_REQUIRED'
+      }
+    ],
     unknownDateToggle: {
       dayUnknown: true,
       monthUnknown: true,
