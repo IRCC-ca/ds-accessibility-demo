@@ -9,6 +9,7 @@ ERROR.requiredRadioError	This field is required	Ce champ est obligatoire
 Home.BeginTask	Begin Task	Commencer la tâche
 AccessibilityDemo.Title	Accessibility Demo	Demo d'accessibilité
 ROUTES.PersonalInfo	personal-information	informations-personnelles
+ROUTES.WorkInfo	work-information	information-de-travail
 ROUTES.BackgroundInfo	background-information	informations-préliminaires
 ACC_DEMO.MODAL_TITLE	Steps	Pas
 ACC_DEMO.HAMBURGER_ARIA	Open the progress indicator	Ouvrez l'indicateur de progression

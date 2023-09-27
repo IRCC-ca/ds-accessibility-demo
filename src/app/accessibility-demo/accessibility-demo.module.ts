@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BackgroundInfoComponent } from './background-info/background-info.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { HomeComponent } from './home/home.component';
+import { WorkInformationComponent } from './work-information/work-information.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
     BackgroundInfoComponent,
     PersonalInformationComponent,
     HomeComponent,
+    WorkInformationComponent,
   ],
   imports: [
     CommonModule,

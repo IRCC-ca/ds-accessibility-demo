@@ -6,6 +6,7 @@
 		"Login": "login",
 		"Login-alt": "connexion",
 		"PersonalInfo": "personal-information",
+		"WorkInfo": "work-information",
 		"BackgroundInfo": "background-information"
 	},
 	"Version": "Version",

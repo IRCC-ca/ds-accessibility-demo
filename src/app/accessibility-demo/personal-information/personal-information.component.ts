@@ -577,7 +577,7 @@ export class PersonalInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.PersonalInfo')
+      this.translate.instant('ROUTES.WorkInfo')
     );
   }
 
