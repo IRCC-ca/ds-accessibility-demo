@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AccessibilityDemoComponent } from './accessibility-demo.component';
 import { BackgroundInfoComponent } from './background-info/background-info.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { HomeComponent } from './home/home.component';

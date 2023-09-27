@@ -6,10 +6,12 @@
 		"Login": "login",
 		"Login-alt": "connexion",
 		"PersonalInfo": "personal-information",
-		"BackgrounInfo": "background-information"
+		"BackgroundInfo": "background-information"
 	},
 	"Version": "Version",
-	"This field is required": "This field is required",
+	"ERROR": {
+		"requiredRadioError": "This field is required"
+	},
 	"Home": {
 		"BeginTask": "Begin Task"
 	},

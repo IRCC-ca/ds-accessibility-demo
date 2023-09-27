@@ -468,17 +468,19 @@ export class PersonalInformationComponent implements OnInit {
       if (eventInt !== this.progressIndicatorConfig.selected) {
         switch (eventInt) {
           case 0:
+            console.log(this.router.url, this.getPreviousButtonLink);
             if (this.router.url !== this.getPreviousButtonLink)
               this.router.navigateByUrl(this.getPreviousButtonLink);
             break;
 
           case 1:
-            // console.log(this.router.url, this.getMainPageLink);
+            console.log(this.router.url, this.getMainPageLink);
             if (this.router.url !== this.getMainPageLink)
               this.router.navigateByUrl(this.getMainPageLink);
             break;
 
           case 2:
+            console.log(this.router.url, this.getNextButtonLink);
             if (this.router.url !== this.getNextButtonLink)
               this.router.navigateByUrl(this.getNextButtonLink);
             break;

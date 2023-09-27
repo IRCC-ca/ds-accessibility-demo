@@ -6,10 +6,12 @@
 		"Login": "connexion",
 		"Login-alt": "login",
 		"PersonalInfo": "informations-personnelles",
-		"BackgrounInfo": "informations-préliminaires"
+		"BackgroundInfo": "informations-préliminaires"
 	},
 	"Version": "Version",
-	"This field is required": "Ce champ est obligatoire",
+	"ERROR": {
+		"requiredRadioError": "Ce champ est obligatoire"
+	},
 	"Home": {
 		"BeginTask": "Commencer la tâche"
 	},
@@ -64,7 +66,7 @@
 				"LABEL": "Date de naissance"
 			},
 			"COUNTRY_OF_BIRTH": {
-				"LABEL": "Country/territory of birth (required)",
+				"LABEL": "Pays / territoire de naissance (requis)",
 				"OPTIONS": {
 					"CANADA": "Canada",
 					"USA": "United States of America",
