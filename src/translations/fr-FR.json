@@ -17,7 +17,7 @@
 		"BeginTask": "Commencer la tâche"
 	},
 	"AccessibilityDemo": {
-		"Title": "Demo d'accessibilité"
+		"Title": "Démo d'accessibilité"
 	},
 	"ACC_DEMO": {
 		"MODAL_TITLE": "Pas",
@@ -46,9 +46,9 @@
 			"H1": "Informations personnelles",
 			"BODY": "Entrez les informations correctes dans les espaces ci-dessous tels qu'il apparaît dans vos documents de passeport, de voyage ou d'identité.",
 			"FAMILY_NAME_INPUT": {
-				"LABEL": "Nom de famille (requis)",
+				"LABEL": "Nom de famille (obligatoire)",
 				"DESC": "Ceci est votre nom de famille ou votre nom",
-				"BANNER": "Si vous n'avez pas de nom de famille, fournissez tous vos noms donnés dans le champ de nom de famille et laissez le champ des noms donnés vide.",
+				"BANNER": "Si vous n'avez pas de nom de famille, fournissez tous vos noms donnés dans le domaine du nom de famille et laissez le champ des noms donnés vide.",
 				"BANNER_CLOSE": "Bannière d'informations sur le nom de famille. Fermer"
 			},
 			"GIVEN_NAME_INPUT": {
@@ -109,5 +109,8 @@
 		"BREADCRUMB_COMPONENT": {
 			"ADDITIONAL_LINKS": "Liens supplémentaires"
 		}
+	},
+	"General": {
+		"Placeholder": "Choisir une option"
 	}
 }

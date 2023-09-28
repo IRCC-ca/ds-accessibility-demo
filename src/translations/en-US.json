@@ -109,5 +109,8 @@
 		"BREADCRUMB_COMPONENT": {
 			"ADDITIONAL_LINKS": "Additional links"
 		}
+	},
+	"General": {
+		"Placeholder": "Select an option"
 	}
 }
