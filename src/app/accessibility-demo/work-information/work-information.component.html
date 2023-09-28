@@ -1,1 +1,23 @@
-<p>work-information works!</p>
+<ircc-cl-lib-hidden-nav [config]="nextHNConfig"></ircc-cl-lib-hidden-nav>
+<div
+  class="page_container"
+  id="ds-cont"
+>
+  <div
+    class="outer_header_stepper_container"
+    id="outer_header_stepper_container"
+  >
+    <div
+      class="header_stepper_container"
+      id="header_stepper_inner_container"
+    >
+      <div class="stepper">
+        <ircc-cl-lib-progress-indicator
+          [config]="progressIndicatorConfig"
+          (tabClick)="progressTabButtonEvent($event)"
+        ></ircc-cl-lib-progress-indicator>
+      </div>
+    </div>
+  </div>
+  <p>{{ 'ACC_DEMO.NEXT_PAGE' | translate }}</p>
+</div>

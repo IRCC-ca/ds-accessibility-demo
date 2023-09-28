@@ -1,1 +1,45 @@
-<p>background-info works!</p>
+<ircc-cl-lib-hidden-nav [config]="prevHNConfig"></ircc-cl-lib-hidden-nav>
+<div
+  class="page_container"
+  id="ds-cont"
+>
+  <div
+    class="outer_header_stepper_container"
+    id="outer_header_stepper_container"
+  >
+    <div
+      class="header_stepper_container"
+      id="header_stepper_inner_container"
+    >
+      <div
+        class="stepper"
+        *ngIf="innerWidth > 980"
+      >
+        <ircc-cl-lib-progress-indicator
+          [config]="progressIndicatorConfig"
+          (tabClick)="progressTabButtonEvent($event)"
+        ></ircc-cl-lib-progress-indicator>
+      </div>
+      </div>
+  </div>
+  <div
+    class="body"
+  >
+    <h1>{{ 'ACC_DEMO.BACKGROUNDINFO' | translate }}</h1>
+    <p>{{ 'ACC_DEMO.PREVIOUS_PAGE.CONTENT' | translate }}</p>
+  </div>
+  <div
+    class="buttons_container"
+  >
+    <ircc-cl-lib-button
+      [iconDirection]="'right'"
+      [icon]="'fa-light fa-arrow-right'"
+      category="secondary"
+      [routerLink]="getMainPageLink"
+    >
+      {{
+        'ACC_DEMO.BUTTONS.PREVIOUS_PAGE_NEXT' | translate
+      }}</ircc-cl-lib-button
+    >
+  </div>
+</div>
