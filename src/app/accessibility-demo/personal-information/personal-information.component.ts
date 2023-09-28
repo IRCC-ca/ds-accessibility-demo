@@ -281,11 +281,6 @@ export class PersonalInformationComponent implements OnInit {
     ]
   };
 
-  allowedNavItemIds: string[] = [
-    'progress_indicator_step_0',
-    'progress_indicator_step_1'
-  ];
-
   constructor(
     private translate: TranslateService,
     private altLang: LanguageSwitchService,
@@ -315,7 +310,7 @@ export class PersonalInformationComponent implements OnInit {
       }
     });
 
-    this.lang.setAltLangLink('AccessibilityDemo');
+    this.lang.setAltLangLink('personal-information');
     // this.lang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();

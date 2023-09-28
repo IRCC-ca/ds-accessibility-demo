@@ -28,26 +28,10 @@ export class BackgroundInfoComponent implements OnInit {
     ]
   };
 
-  hamburgerDialogXButtonConfig: IIconButtonComponentConfig = {
-    id: 'hamburger_dialog_x_button',
-    category: 'custom',
-    size: 'large',
-    icon: {
-      class: 'fa-regular fa-x',
-      color: 'var(--text-primary)'
-    }
-  };
-
   altPathKey = '';
   altLangURL = '';
 
   innerWidth = 0;
-  hamburgerMenuState: boolean | undefined = undefined;
-  allowedNavItemIds: string[] = [
-    'progress_indicator_step_0',
-    'progress_indicator_step_1',
-    'hamburger_dialog_x_button'
-  ];
 
   constructor(
     private router: Router,
@@ -68,7 +52,7 @@ export class BackgroundInfoComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     this.updateProgressBarOrientation();
 
-    this.lang.setAltLangLink('AccessibilityDemoPrevious');
+    this.lang.setAltLangLink('background-information');
     // this.altLang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
@@ -157,23 +141,6 @@ export class BackgroundInfoComponent implements OnInit {
   }
 
   /**
-   * Open the hamburger menu progress indicator
-   */
-  menuHamburgerButton() {
-    console.log(this.hamburgerMenuState);
-    if (this.hamburgerMenuState !== undefined && !this.hamburgerMenuState) {
-      this.hamburgerMenuState = true;
-      setTimeout(() => {
-        const focus = document.getElementById('hamburger_dialog_x_button');
-        focus?.focus();
-        console.log(focus);
-      }, 50);
-    } else {
-      this.hamburgerMenuState = false;
-    }
-  }
-
-  /**
    * Update the orientation of the progress bar
    */
   updateProgressBarOrientation() {
@@ -183,16 +150,12 @@ export class BackgroundInfoComponent implements OnInit {
         this.progressIndicatorConfig.orientation === undefined)
     ) {
       this.progressIndicator.updateOrientation('vertical');
-      if (this.hamburgerMenuState === undefined) {
-        this.hamburgerMenuState = false;
-      }
     } else if (
       this.innerWidth > 980 &&
       (this.progressIndicatorConfig.orientation === 'vertical' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
       this.progressIndicator.updateOrientation('horizontal');
-      this.hamburgerMenuState = undefined;
     }
   }
 

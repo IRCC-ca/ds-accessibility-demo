@@ -39,7 +39,7 @@ export class WorkInformationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.lang.setAltLangLink('AccessibilityDemoNext');
+    this.lang.setAltLangLink('work-information');
     // this.lang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
@@ -64,6 +64,7 @@ export class WorkInformationComponent implements OnInit {
 
   progressTabButtonEvent(event: Event) {
     const eventInt = parseInt(event.toString());
+    console.log('Progress Tab Event', event)
     if (this.progressIndicatorConfig.selected !== undefined) {
       if (eventInt !== this.progressIndicatorConfig.selected) {
         switch (eventInt) {
