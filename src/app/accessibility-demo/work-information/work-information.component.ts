@@ -95,7 +95,7 @@ export class WorkInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.AccessibilityDemoPrevious')
+      this.translate.instant('ROUTES.BackgroundInfo')
     );
   }
 
@@ -103,28 +103,21 @@ export class WorkInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.AccessibilityDemoNext')
+      this.translate.instant('ROUTES.WorkInfo')
     );
   }
 
   /**
-   * Getter for the main page link
-   */
+ * Getter for the main page link
+ */
   get getMainPageLink() {
     const curLang = this.translate.currentLang;
     this.translate.use(
       curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
     );
     const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
-    console.log(
-      '327',
-      curLang,
-      '/' + lang + '/' + this.translate.instant('ROUTES.AccessibilityDemo')
-    );
-
-    // return ''
     return (
-      '/' + lang + '/' + this.translate.instant('ROUTES.AccessibilityDemo')
+      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
     );
   }
 
