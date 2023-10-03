@@ -51,7 +51,7 @@ export class WorkInformationComponent implements OnInit {
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const tempConfig = this.progressIndicatorConfig;
-        tempConfig.selected = 1;
+        tempConfig.selected = 2;
         this.formService.updateProgressIndicator(tempConfig);
       }
     });
@@ -69,25 +69,11 @@ export class WorkInformationComponent implements OnInit {
   /**
    * Getter for the previous page button
    */
-  get getPreviousButtonLink() {
-    return (
+  previousPage() {
+    return this.router.navigateByUrl(
       this.translate.currentLang +
       '/' +
       this.translate.instant('ROUTES.PersonalInfo')
-    );
-  }
-
-/**
- * Getter for the main page link
-*/
-  get () {
-    const curLang = this.translate.currentLang;
-    this.translate.use(
-      curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
-    );
-    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
-    return (
-      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
     );
   }
 

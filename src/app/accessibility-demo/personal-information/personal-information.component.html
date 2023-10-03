@@ -106,7 +106,7 @@
             [iconDirection]="'left'"
             [category]="'secondary'"
             [icon]="'fa-light fa-arrow-left'"
-            [routerLink]="getPreviousButtonLink"
+            (click)="previousPage()"
           >
             {{ 'ACC_DEMO.BUTTONS.PREVIOUS' | translate }}</ircc-cl-lib-button
           >

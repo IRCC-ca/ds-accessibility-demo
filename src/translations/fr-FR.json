@@ -17,19 +17,20 @@
 		"BeginTask": "Commencer la tâche"
 	},
 	"AccessibilityDemo": {
-		"Title": "Démo d'accessibilité"
+		"Title": "Demo d'accessibilité"
 	},
 	"ACC_DEMO": {
 		"MODAL_TITLE": "Pas",
 		"HAMBURGER_ARIA": "Ouvrez l'indicateur de progression",
 		"BACKGROUNDINFO": "Informations d'arrière-plan",
+		"WORKINFO": "Informations professionnelles",
 		"PREVIOUS_PAGE": {
 			"CONTENT": "Cette page ne fait pas partie du prototype. Veuillez utiliser le bouton ci-dessous pour revenir à l'écran précédent."
 		},
 		"NEXT_PAGE": "Ceci est un exemple d'une page suivante - il est simplement là à des fins de démonstration et n'est pas configuré pour une accessibilité correcte. Notez la mise à jour de l'indicateur de progression en haut de la page. Vous pouvez naviguer en utilisant l'indicateur de progression",
 		"ERRORS": {
 			"FAMILY_NAME_REQUIRED": "Ce champ est vide. Veuillez saisir un nom de famille",
-			"DOB_NO_SELECTION_REQUIRED": "Aucune sélection n'a été faite. Veuillez remplir les champs pour compléter votre date de naissance.",
+			"DOB_NO_SELECTION_REQUIRED": "Aucune sélection n'a été faite. Veuillez remplir les champs pour terminer votre date de naissance.",
 			"DOB_REQUIRED": "Veuillez remplir les champs manquants pour terminer votre date de naissance.",
 			"DECLARATION_REQUIRED": "Aucune sélection n'a été faite. Veuillez faire une sélection pour compléter votre déclaration",
 			"DECLARATION_CUSTOM": "Vous devez accepter de continuer"
@@ -48,7 +49,7 @@
 			"FAMILY_NAME_INPUT": {
 				"LABEL": "Nom de famille (obligatoire)",
 				"DESC": "Ceci est votre nom de famille ou votre nom",
-				"BANNER": "Si vous n'avez pas de nom de famille, fournissez tous vos noms donnés dans le domaine du nom de famille et laissez le champ des noms donnés vide.",
+				"BANNER": "Si vous n'avez pas de nom de famille, fournissez tous vos noms donnés dans le champ de nom de famille et laissez le champ des noms donnés vide.",
 				"BANNER_CLOSE": "Bannière d'informations sur le nom de famille. Fermer"
 			},
 			"GIVEN_NAME_INPUT": {

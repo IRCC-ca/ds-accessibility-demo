@@ -19,13 +19,19 @@
       </div>
     </div>
   </div>
+    <div
+    class="body"
+  >
+    <h1>{{ 'ACC_DEMO.WORKINFO' | translate }}</h1>
+    <p>{{ 'ACC_DEMO.PREVIOUS_PAGE.CONTENT' | translate }}</p>
+  </div>
         <div class="buttons_container">
         <div class="btn1">
           <ircc-cl-lib-button
             [iconDirection]="'left'"
             [category]="'secondary'"
             [icon]="'fa-light fa-arrow-left'"
-            [routerLink]="getPreviousButtonLink"
+            (click)="previousPage()"
           >
             {{ 'ACC_DEMO.BUTTONS.PREVIOUS' | translate }}</ircc-cl-lib-button
           >

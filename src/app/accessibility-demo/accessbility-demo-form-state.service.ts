@@ -86,23 +86,28 @@ export class AccessbilityDemoFormStateService {
 
   progressTabButtonEvent(event: any) {
     const eventInt = parseInt(event.toString());
-
+    const curLang = this.translate.currentLang;
+    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
+    
     if (this.progressIndicatorConfig.selected !== undefined) {
       if (eventInt !== this.progressIndicatorConfig.selected) {
         switch (eventInt) {
           case 0:
-            if (this.router.url !== '/en/background-information')
-              this.router.navigateByUrl(this.translate.currentLang +
+            if (this.router.url !== lang +
+              '/' + this.translate.instant('ROUTES.BackgroundInfo'))
+              this.router.navigateByUrl(lang +
               '/' + this.translate.instant('ROUTES.BackgroundInfo'));
             break;
           case 1:
-            if (this.router.url !== '/en/personal-information')
-              this.router.navigateByUrl(this.translate.currentLang +
+            if (this.router.url !== lang +
+              '/' + this.translate.instant('ROUTES.PersonalInfo'))
+              this.router.navigateByUrl(lang +
             '/' + this.translate.instant('ROUTES.PersonalInfo'));
             break;
           case 2:
-            if (this.router.url !== '/en/work-information')
-              this.router.navigateByUrl(this.translate.currentLang +
+            if (this.router.url !== lang +
+              '/' + this.translate.instant('ROUTES.WorkInfo'))
+              this.router.navigateByUrl(lang +
                 '/' + this.translate.instant('ROUTES.WorkInfo'));
             break;
         }
@@ -110,36 +115,40 @@ export class AccessbilityDemoFormStateService {
     }
   }
 
-  /**
-   * Getter for the previous page button
-   */
-  get getPreviousButtonLink() {
-    return (
-      this.translate.currentLang +
-      '/' +
-      this.translate.instant('ROUTES.PersonalInfo')
-    );
-  }
+  // /**
+  //  * Getter for the previous page button
+  //  */
+  // get getPreviousButtonLink() {
+  //   return (
+  //     this.translate.currentLang +
+  //     '/' +
+  //     this.translate.instant('ROUTES.PersonalInfo')
+  //   );
+  // }
 
-  get getNextButtonLink() {
-    return (
-      this.translate.currentLang +
-      '/' +
-      this.translate.instant('ROUTES.WorkInfo')
-    );
-  }
+  // get getNextButtonLink() {
+  //   return (
+  //     this.translate.currentLang +
+  //     '/' +
+  //     this.translate.instant('ROUTES.WorkInfo')
+  //   );
+  // }
 
-  /**
-   * Getter for the main page link
-  */
-  get getMainPageLink() {
-    const curLang = this.translate.currentLang;
-    this.translate.use(
-      curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
-    );
-    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
-    return (
-      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
-    );
+  // /**
+  //  * Getter for the main page link
+  // */
+  // get getMainPageLink() {
+  //   const curLang = this.translate.currentLang;
+  //   this.translate.use(
+  //     curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
+  //   );
+  //   const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
+  //   return (
+  //     '/' + lang + '/' + this.translate.instant('ROUTES.Home')
+  //   );
+  // }
+
+  navigateTabs() {
+
   }
 }

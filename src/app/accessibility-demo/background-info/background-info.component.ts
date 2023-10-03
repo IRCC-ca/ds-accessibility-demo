@@ -64,7 +64,7 @@ export class BackgroundInfoComponent implements OnInit {
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const tempConfig = this.progressIndicatorConfig;
-        tempConfig.selected = 1;
+        tempConfig.selected = 0;
         this.formService.updateProgressIndicator(tempConfig);
       }
     });
@@ -79,49 +79,8 @@ export class BackgroundInfoComponent implements OnInit {
     this.formService.progressTabButtonEvent(event);
   }
 
-  /**
- * Once triggered, this tracks if the form is valid and updates the showErrorBanner variable accordingly
- */
-  navButton() {
-    // this.nextClicked = true;
-    // this.form.markAllAsTouched();
-    // this.updateProgressIndicator();
-    // if (!this.form.valid) {
-    //   this.showErrorBanner = true;
-    //   this.form.valueChanges.subscribe(() => {
-    //     this.showErrorBanner = !this.form.valid;
-    //     this.updateProgressIndicator();
-    //   });
-
-    //   setTimeout(() => {
-    //     this.errorBannerRef?.nativeElement.scrollIntoView({
-    //       behavior: 'smooth'
-    //     });
-    //   });
-    // } else {
-    //   const tempConfig = this.progressIndicatorConfig;
-    //   if (tempConfig.steps) {
-    //     tempConfig.steps[1].tagConfig.type = 'success';
-    //     tempConfig.steps[2].tagConfig.type = 'primary';
-    //   }
-    //   this.progressIndicator.updateProgressIndicator(tempConfig);
-      this.router.navigateByUrl(this.getNextButtonLink);
-     //NOTE: No need to deal with cases not covered above, since those will result in navigation!
-  }
-
-  /**
-   * Getter for the previous page button
-   */
-  get getPreviousButtonLink() {
-    return (
-      this.translate.currentLang +
-      '/' +
-      this.translate.instant('ROUTES.Home')
-    );
-  }
-
-  get getNextButtonLink() {
-    return (
+  nextPage() {
+    return this.router.navigateByUrl(
       this.translate.currentLang +
       '/' +
       this.translate.instant('ROUTES.PersonalInfo')
@@ -129,17 +88,10 @@ export class BackgroundInfoComponent implements OnInit {
   }
 
   /**
- * Getter for the main page link
- */
-  get getMainPageLink() {
-    const curLang = this.translate.currentLang;
-    this.translate.use(
-      curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
-    );
-    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
-    return (
-      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
-    );
+   * Getter for the previous page button
+   */
+  previousPage() {
+    return this.router.navigateByUrl(this.translate.currentLang)
   }
 
   /**

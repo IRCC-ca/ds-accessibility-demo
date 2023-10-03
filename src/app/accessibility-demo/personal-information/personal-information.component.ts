@@ -506,7 +506,7 @@ export class PersonalInformationComponent implements OnInit {
         tempConfig.steps[2].tagConfig.type = 'primary';
       }
       this.formService.updateProgressIndicator(tempConfig);
-      this.router.navigateByUrl(this.getNextButtonLink);
+      this.nextPage();
     } //NOTE: No need to deal with cases not covered above, since those will result in navigation!
   }
 
@@ -534,16 +534,14 @@ export class PersonalInformationComponent implements OnInit {
   /**
    * Getter for the previous page button
    */
-  get getPreviousButtonLink() {
-    return (
-      this.translate.currentLang +
+  previousPage() {
+    return this.router.navigateByUrl(this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.BackgroundInfo')
-    );
+      this.translate.instant('ROUTES.BackgroundInfo'))
   }
 
-  get getNextButtonLink() {
-    return (
+  nextPage() {
+    this.router.navigateByUrl(
       this.translate.currentLang +
       '/' +
       this.translate.instant('ROUTES.WorkInfo')

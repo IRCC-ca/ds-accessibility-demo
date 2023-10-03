@@ -23,6 +23,7 @@
 		"MODAL_TITLE": "Steps",
 		"HAMBURGER_ARIA": "Open the progress indicator",
 		"BACKGROUNDINFO": "Background information",
+		"WORKINFO": "Work information",
 		"PREVIOUS_PAGE": {
 			"CONTENT": "This page is not part of the prototype. Please use the button below to return to the previous screen."
 		},
