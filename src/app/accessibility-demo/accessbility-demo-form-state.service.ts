@@ -86,24 +86,24 @@ export class AccessbilityDemoFormStateService {
 
   progressTabButtonEvent(event: any) {
     const eventInt = parseInt(event.toString());
-    console.log('Progress Tab Event', event)
+
     if (this.progressIndicatorConfig.selected !== undefined) {
       if (eventInt !== this.progressIndicatorConfig.selected) {
         switch (eventInt) {
           case 0:
-            if (this.router.url !== this.getPreviousButtonLink)
-              this.router.navigateByUrl(this.getPreviousButtonLink);
+            if (this.router.url !== '/en/background-information')
+              this.router.navigateByUrl(this.translate.currentLang +
+              '/' + this.translate.instant('ROUTES.BackgroundInfo'));
             break;
-
           case 1:
-            console.log(this.router.url, this.getMainPageLink);
-            if (this.router.url !== this.getMainPageLink)
-              this.router.navigateByUrl(this.getMainPageLink);
+            if (this.router.url !== '/en/personal-information')
+              this.router.navigateByUrl(this.translate.currentLang +
+            '/' + this.translate.instant('ROUTES.PersonalInfo'));
             break;
-
           case 2:
-            if (this.router.url !== this.getNextButtonLink)
-              this.router.navigateByUrl(this.getNextButtonLink);
+            if (this.router.url !== '/en/work-information')
+              this.router.navigateByUrl(this.translate.currentLang +
+                '/' + this.translate.instant('ROUTES.WorkInfo'));
             break;
         }
       }

@@ -1,1 +1,10 @@
 @use "../accessibility-demo.component.scss";
+.body {
+  max-width: 628px;
+}
+.buttons_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+  max-width: 628px;
+}
