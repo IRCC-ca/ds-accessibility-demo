@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { LanguageSwitchService } from '@app/@shared/language-switch/language-switch.service';
+import { TranslateService } from '@ngx-translate/core';
 import {
   IProgressIndicatorConfig,
   Orientations
@@ -9,6 +12,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AccessbilityDemoFormStateService {
+
+  constructor(
+    private router: Router,
+    private translate: TranslateService,
+  ) { }
   progressIndicatorConfig: IProgressIndicatorConfig = {
     id: 'progress_indicator',
     selected: 1,
@@ -74,5 +82,64 @@ export class AccessbilityDemoFormStateService {
   updateOrientation(orientation: keyof typeof Orientations) {
     this.progressIndicatorConfig.orientation = orientation;
     this.progressIndicatorSubj.next(this.progressIndicatorConfig);
+  }
+
+  progressTabButtonEvent(event: any) {
+    const eventInt = parseInt(event.toString());
+    console.log('Progress Tab Event', event)
+    if (this.progressIndicatorConfig.selected !== undefined) {
+      if (eventInt !== this.progressIndicatorConfig.selected) {
+        switch (eventInt) {
+          case 0:
+            if (this.router.url !== this.getPreviousButtonLink)
+              this.router.navigateByUrl(this.getPreviousButtonLink);
+            break;
+
+          case 1:
+            console.log(this.router.url, this.getMainPageLink);
+            if (this.router.url !== this.getMainPageLink)
+              this.router.navigateByUrl(this.getMainPageLink);
+            break;
+
+          case 2:
+            if (this.router.url !== this.getNextButtonLink)
+              this.router.navigateByUrl(this.getNextButtonLink);
+            break;
+        }
+      }
+    }
+  }
+
+  /**
+   * Getter for the previous page button
+   */
+  get getPreviousButtonLink() {
+    return (
+      this.translate.currentLang +
+      '/' +
+      this.translate.instant('ROUTES.PersonalInfo')
+    );
+  }
+
+  get getNextButtonLink() {
+    return (
+      this.translate.currentLang +
+      '/' +
+      this.translate.instant('ROUTES.WorkInfo')
+    );
+  }
+
+  /**
+   * Getter for the main page link
+  */
+  get getMainPageLink() {
+    const curLang = this.translate.currentLang;
+    this.translate.use(
+      curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
+    );
+    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
+    return (
+      '/' + lang + '/' + this.translate.instant('ROUTES.Home')
+    );
   }
 }

@@ -285,7 +285,7 @@ export class PersonalInformationComponent implements OnInit {
     private translate: TranslateService,
     private altLang: LanguageSwitchService,
     private router: Router,
-    private progressIndicator: AccessbilityDemoFormStateService,
+    private formService: AccessbilityDemoFormStateService,
     private labelButton: LabelButtonService,
     private elementRef: ElementRef,
     private lang: LanguageSwitchService
@@ -303,10 +303,10 @@ export class PersonalInformationComponent implements OnInit {
     this.updateProgressBarOrientation();
 
     //if the page has moved to this one via a back or forward browser button, this detects the move and updates the page.
-    this.progressIndicator.updateSelected(1);
+    this.formService.updateSelected(1);
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.progressIndicator.updateSelected(1);
+        this.formService.updateSelected(1);
       }
     });
 
@@ -322,7 +322,7 @@ export class PersonalInformationComponent implements OnInit {
     // });
 
     this.progressIndicatorSub =
-      this.progressIndicator.progressIndicatorObs$.subscribe((response: any) => {
+      this.formService.progressIndicatorObs$.subscribe((response: any) => {
         this.progressIndicatorConfig = response;
       });
 
@@ -425,10 +425,10 @@ export class PersonalInformationComponent implements OnInit {
       if (tempConfig.steps) {
         if (this.form.valid) {
           tempConfig.steps[2].tagConfig.type = 'notStarted';
-          this.progressIndicator.updateProgressIndicator(tempConfig);
+          this.formService.updateProgressIndicator(tempConfig);
         } else {
           tempConfig.steps[2].tagConfig.type = 'locked';
-          this.progressIndicator.updateProgressIndicator(tempConfig);
+          this.formService.updateProgressIndicator(tempConfig);
         }
       }
     }
@@ -443,13 +443,13 @@ export class PersonalInformationComponent implements OnInit {
       (this.progressIndicatorConfig.orientation === 'horizontal' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
-      this.progressIndicator.updateOrientation('vertical');
+      this.formService.updateOrientation('vertical');
     } else if (
       this.innerWidth > 980 &&
       (this.progressIndicatorConfig.orientation === 'vertical' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
-      this.progressIndicator.updateOrientation('horizontal');
+      this.formService.updateOrientation('horizontal');
     }
   }
 
@@ -458,33 +458,7 @@ export class PersonalInformationComponent implements OnInit {
    * @param event number (index of tab pressed)
    */
   progressTabButtonEvent(event: Event) {
-    const eventInt = parseInt(event.toString());
-    if (this.progressIndicatorConfig.selected !== undefined) {
-      if (eventInt !== this.progressIndicatorConfig.selected) {
-        switch (eventInt) {
-          case 0:
-            console.log(this.router.url, this.getPreviousButtonLink);
-            if (this.router.url !== this.getPreviousButtonLink)
-              this.router.navigateByUrl(this.getPreviousButtonLink);
-            break;
-
-          case 1:
-            console.log(this.router.url, this.getMainPageLink);
-            if (this.router.url !== this.getMainPageLink)
-              this.router.navigateByUrl(this.getMainPageLink);
-            break;
-
-          case 2:
-            console.log(this.router.url, this.getNextButtonLink);
-            if (this.router.url !== this.getNextButtonLink)
-              this.router.navigateByUrl(this.getNextButtonLink);
-            break;
-
-          default:
-            break;
-        }
-      }
-    }
+      this.formService.progressTabButtonEvent(event);
   }
 
   /**
@@ -531,7 +505,7 @@ export class PersonalInformationComponent implements OnInit {
         tempConfig.steps[1].tagConfig.type = 'success';
         tempConfig.steps[2].tagConfig.type = 'primary';
       }
-      this.progressIndicator.updateProgressIndicator(tempConfig);
+      this.formService.updateProgressIndicator(tempConfig);
       this.router.navigateByUrl(this.getNextButtonLink);
     } //NOTE: No need to deal with cases not covered above, since those will result in navigation!
   }

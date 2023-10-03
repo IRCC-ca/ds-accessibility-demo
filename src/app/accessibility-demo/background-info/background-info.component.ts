@@ -35,7 +35,7 @@ export class BackgroundInfoComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private progressIndicator: AccessbilityDemoFormStateService,
+    private formService: AccessbilityDemoFormStateService,
     private translate: TranslateService,
     private altLang: LanguageSwitchService,
     private lang: LanguageSwitchService
@@ -59,45 +59,24 @@ export class BackgroundInfoComponent implements OnInit {
     //   console.log(this.altLangURL);
     // });
 
-    this.progressIndicator.updateSelected(0);
+    this.formService.updateSelected(0);
     //if the page has moved to this one via a back or forward browser button, this detects the move and updates the page.
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const tempConfig = this.progressIndicatorConfig;
         tempConfig.selected = 1;
-        this.progressIndicator.updateProgressIndicator(tempConfig);
+        this.formService.updateProgressIndicator(tempConfig);
       }
     });
 
     this.progressIndicatorSub =
-      this.progressIndicator.progressIndicatorObs$.subscribe((response) => {
+      this.formService.progressIndicatorObs$.subscribe((response) => {
         this.progressIndicatorConfig = response;
       });
   }
 
   progressTabButtonEvent(event: Event) {
-    const eventInt = parseInt(event.toString());
-    if (this.progressIndicatorConfig.selected !== undefined) {
-      if (eventInt !== this.progressIndicatorConfig.selected) {
-        switch (eventInt) {
-          case 0:
-            if (this.router.url !== this.getPreviousButtonLink)
-              this.router.navigateByUrl(this.getPreviousButtonLink);
-            break;
-
-          case 1:
-            console.log(this.router.url, this.getMainPageLink);
-            if (this.router.url !== this.getMainPageLink)
-              this.router.navigateByUrl(this.getMainPageLink);
-            break;
-
-          case 2:
-            if (this.router.url !== this.getNextButtonLink)
-              this.router.navigateByUrl(this.getNextButtonLink);
-            break;
-        }
-      }
-    }
+    this.formService.progressTabButtonEvent(event);
   }
 
   /**
@@ -172,13 +151,13 @@ export class BackgroundInfoComponent implements OnInit {
       (this.progressIndicatorConfig.orientation === 'horizontal' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
-      this.progressIndicator.updateOrientation('vertical');
+      this.formService.updateOrientation('vertical');
     } else if (
       this.innerWidth > 980 &&
       (this.progressIndicatorConfig.orientation === 'vertical' ||
         this.progressIndicatorConfig.orientation === undefined)
     ) {
-      this.progressIndicator.updateOrientation('horizontal');
+      this.formService.updateOrientation('horizontal');
     }
   }
 

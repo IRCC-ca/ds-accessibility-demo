@@ -32,7 +32,7 @@ export class WorkInformationComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private progressIndicator: AccessbilityDemoFormStateService,
+    private formService: AccessbilityDemoFormStateService,
     private translate: TranslateService,
     private altLang: LanguageSwitchService,
     private lang: LanguageSwitchService
@@ -46,73 +46,24 @@ export class WorkInformationComponent implements OnInit {
     //   console.log(this.altLangURL);
     // });
 
-    this.progressIndicator.updateSelected(2);
+    this.formService.updateSelected(2);
     //if the page has moved to this one via a back or forward browser button, this detects the move and updates the page.
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const tempConfig = this.progressIndicatorConfig;
         tempConfig.selected = 1;
-        this.progressIndicator.updateProgressIndicator(tempConfig);
+        this.formService.updateProgressIndicator(tempConfig);
       }
     });
 
     this.progressIndicatorSub =
-      this.progressIndicator.progressIndicatorObs$.subscribe((response) => {
+      this.formService.progressIndicatorObs$.subscribe((response) => {
         this.progressIndicatorConfig = response;
       });
   }
 
   progressTabButtonEvent(event: Event) {
-    const eventInt = parseInt(event.toString());
-    console.log('Progress Tab Event', event)
-    if (this.progressIndicatorConfig.selected !== undefined) {
-      if (eventInt !== this.progressIndicatorConfig.selected) {
-        switch (eventInt) {
-          case 0:
-            if (this.router.url !== this.getPreviousButtonLink)
-              this.router.navigateByUrl(this.getPreviousButtonLink);
-            break;
-
-          case 1:
-            console.log(this.router.url, this.getMainPageLink);
-            if (this.router.url !== this.getMainPageLink)
-              this.router.navigateByUrl(this.getMainPageLink);
-            break;
-
-          case 2:
-            if (this.router.url !== this.getNextButtonLink)
-              this.router.navigateByUrl(this.getNextButtonLink);
-            break;
-        }
-      }
-    }
-  }
-
-  navButton() {
-    // this.nextClicked = true;
-    // this.form.markAllAsTouched();
-    // this.updateProgressIndicator();
-    // if (!this.form.valid) {
-    //   this.showErrorBanner = true;
-    //   this.form.valueChanges.subscribe(() => {
-    //     this.showErrorBanner = !this.form.valid;
-    //     this.updateProgressIndicator();
-    //   });
-
-    //   setTimeout(() => {
-    //     this.errorBannerRef?.nativeElement.scrollIntoView({
-    //       behavior: 'smooth'
-    //     });
-    //   });
-    // } else {
-    //   const tempConfig = this.progressIndicatorConfig;
-    //   if (tempConfig.steps) {
-    //     tempConfig.steps[1].tagConfig.type = 'success';
-    //     tempConfig.steps[2].tagConfig.type = 'primary';
-    //   }
-    //   this.progressIndicator.updateProgressIndicator(tempConfig);
-    this.router.navigateByUrl(this.getNextButtonLink);
-    //NOTE: No need to deal with cases not covered above, since those will result in navigation!
+    this.formService.progressTabButtonEvent(event);
   }
 
   /**
@@ -126,18 +77,10 @@ export class WorkInformationComponent implements OnInit {
     );
   }
 
-  get getNextButtonLink() {
-    return (
-      this.translate.currentLang +
-      '/' +
-      this.translate.instant('ROUTES.WorkInfo')
-    );
-  }
-
 /**
  * Getter for the main page link
 */
-  get getMainPageLink() {
+  get () {
     const curLang = this.translate.currentLang;
     this.translate.use(
       curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
