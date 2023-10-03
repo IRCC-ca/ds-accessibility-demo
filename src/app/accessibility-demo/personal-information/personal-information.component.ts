@@ -22,9 +22,9 @@ import {
 } from 'ircc-ds-angular-component-library';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, first } from 'rxjs';
 import { LanguageSwitchService } from '@app/@shared/language-switch/language-switch.service';
-import { AccessbilityDemoFormStateService } from '../accessbility-demo-form-state.service';
+import { AccessbilityDemoFormStateService, IDemoFormDataInterface } from '../accessbility-demo-form-state.service';
 
 
 export interface ICityOfBirth {
@@ -93,7 +93,7 @@ export class PersonalInformationComponent implements OnInit {
   showErrorBanner = false;
   showFamilyNameBanner = false;
   showSexAtBirthBanner = false;
-
+  formData: IDemoFormDataInterface = {};
   innerWidth = 0;
 
   routerSub?: Subscription;
@@ -297,6 +297,16 @@ export class PersonalInformationComponent implements OnInit {
     this.updateProgressBarOrientation();
   }
 
+  ngAfterViewInit(): void {
+    /**
+     * Set local storage form data when form values change after init so we're not setting and getting at the same time
+     *
+     */
+    this.form.valueChanges.subscribe((val) => {
+      this.setFormData(val);
+    });
+  }
+
   ngOnInit() {
     //Set orientation of the progress bar and get initial window width
     this.innerWidth = window.innerWidth;
@@ -390,6 +400,11 @@ export class PersonalInformationComponent implements OnInit {
             break;
         }
       });
+
+    /**
+* Get local storage form data on page reload
+*/
+    this.getFormDataFromService();
   }
 
   /**
@@ -546,6 +561,27 @@ export class PersonalInformationComponent implements OnInit {
       '/' +
       this.translate.instant('ROUTES.WorkInfo')
     );
+  }
+
+  /**
+ * Get local storage form data on page reload from the RequestFormService
+ */
+  getFormDataFromService() {
+    this.formService
+      .getFormData()
+      .pipe(first()) //take only the first to avoid infinite loop
+      .subscribe((val) => {
+        this.formData = val;
+        this.form.patchValue(this.formData);
+        this.form.updateValueAndValidity();
+      });
+  }
+
+  /**
+ * Set local storage form data on page reload with the service
+ */
+  setFormData(requestFormData: IDemoFormDataInterface): void {
+    return this.formService.setFormData(requestFormData);
   }
 
   /**

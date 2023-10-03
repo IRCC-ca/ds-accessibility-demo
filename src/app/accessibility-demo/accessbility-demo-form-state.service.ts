@@ -6,12 +6,28 @@ import {
   IProgressIndicatorConfig,
   Orientations
 } from 'ircc-ds-angular-component-library';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+export interface IDemoFormDataInterface {
+  ['family-name']?: string;
+  ['given-name']?: string;
+  ['sex-at-birth']?: string;
+  ['date-requested-datepicker_yearControl']?: string;
+  ['date-requested-datepicker_monthControl']?: string;
+  ['date-requested-datepicker_dayControl']?: string;
+  ['country']?: string;
+  ['city']?: string;
+  ['declaration']?: boolean;
+  [key: string]: any;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccessbilityDemoFormStateService {
+  private formData = new BehaviorSubject<IDemoFormDataInterface>({});
+  formObs = this.formData.asObservable();
+  private storageKey: string = 'formData';
 
   constructor(
     private router: Router,
@@ -115,40 +131,16 @@ export class AccessbilityDemoFormStateService {
     }
   }
 
-  // /**
-  //  * Getter for the previous page button
-  //  */
-  // get getPreviousButtonLink() {
-  //   return (
-  //     this.translate.currentLang +
-  //     '/' +
-  //     this.translate.instant('ROUTES.PersonalInfo')
-  //   );
-  // }
+  setFormData(data: IDemoFormDataInterface) {
+    localStorage.setItem(this.storageKey, JSON.stringify(data));
+    this.formData.next(data);
+  }
 
-  // get getNextButtonLink() {
-  //   return (
-  //     this.translate.currentLang +
-  //     '/' +
-  //     this.translate.instant('ROUTES.WorkInfo')
-  //   );
-  // }
-
-  // /**
-  //  * Getter for the main page link
-  // */
-  // get getMainPageLink() {
-  //   const curLang = this.translate.currentLang;
-  //   this.translate.use(
-  //     curLang === 'en-US' || curLang === 'en' ? 'en-US' : 'fr-FR'
-  //   );
-  //   const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
-  //   return (
-  //     '/' + lang + '/' + this.translate.instant('ROUTES.Home')
-  //   );
-  // }
-
-  navigateTabs() {
-
+  getFormData(): Observable<IDemoFormDataInterface> {
+    const data = localStorage.getItem(this.storageKey);
+    if (data) {
+      this.formData.next(JSON.parse(data));
+    }
+    return this.formObs;
   }
 }
