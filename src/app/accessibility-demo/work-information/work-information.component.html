@@ -19,5 +19,25 @@
       </div>
     </div>
   </div>
-  <p>{{ 'ACC_DEMO.NEXT_PAGE' | translate }}</p>
+        <div class="buttons_container">
+        <div class="btn1">
+          <ircc-cl-lib-button
+            [iconDirection]="'left'"
+            [category]="'secondary'"
+            [icon]="'fa-light fa-arrow-left'"
+            [routerLink]="getPreviousButtonLink"
+          >
+            {{ 'ACC_DEMO.BUTTONS.PREVIOUS' | translate }}</ircc-cl-lib-button
+          >
+        </div>
+        <div class="btn2">
+          <ircc-cl-lib-button
+            [iconDirection]="'right'"
+            [icon]="'fa-light fa-arrow-right'"
+            (click)="navButton()"
+          >
+            {{ 'ACC_DEMO.BUTTONS.NEXT' | translate }}</ircc-cl-lib-button
+          >
+        </div>
+      </div>
 </div>

@@ -101,13 +101,43 @@ export class BackgroundInfoComponent implements OnInit {
   }
 
   /**
+ * Once triggered, this tracks if the form is valid and updates the showErrorBanner variable accordingly
+ */
+  navButton() {
+    // this.nextClicked = true;
+    // this.form.markAllAsTouched();
+    // this.updateProgressIndicator();
+    // if (!this.form.valid) {
+    //   this.showErrorBanner = true;
+    //   this.form.valueChanges.subscribe(() => {
+    //     this.showErrorBanner = !this.form.valid;
+    //     this.updateProgressIndicator();
+    //   });
+
+    //   setTimeout(() => {
+    //     this.errorBannerRef?.nativeElement.scrollIntoView({
+    //       behavior: 'smooth'
+    //     });
+    //   });
+    // } else {
+    //   const tempConfig = this.progressIndicatorConfig;
+    //   if (tempConfig.steps) {
+    //     tempConfig.steps[1].tagConfig.type = 'success';
+    //     tempConfig.steps[2].tagConfig.type = 'primary';
+    //   }
+    //   this.progressIndicator.updateProgressIndicator(tempConfig);
+      this.router.navigateByUrl(this.getNextButtonLink);
+     //NOTE: No need to deal with cases not covered above, since those will result in navigation!
+  }
+
+  /**
    * Getter for the previous page button
    */
   get getPreviousButtonLink() {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.BackgroundInfo')
+      this.translate.instant('ROUTES.Home')
     );
   }
 
@@ -115,7 +145,7 @@ export class BackgroundInfoComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.WorkInfo')
+      this.translate.instant('ROUTES.PersonalInfo')
     );
   }
 

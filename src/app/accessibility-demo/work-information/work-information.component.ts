@@ -88,6 +88,33 @@ export class WorkInformationComponent implements OnInit {
     }
   }
 
+  navButton() {
+    // this.nextClicked = true;
+    // this.form.markAllAsTouched();
+    // this.updateProgressIndicator();
+    // if (!this.form.valid) {
+    //   this.showErrorBanner = true;
+    //   this.form.valueChanges.subscribe(() => {
+    //     this.showErrorBanner = !this.form.valid;
+    //     this.updateProgressIndicator();
+    //   });
+
+    //   setTimeout(() => {
+    //     this.errorBannerRef?.nativeElement.scrollIntoView({
+    //       behavior: 'smooth'
+    //     });
+    //   });
+    // } else {
+    //   const tempConfig = this.progressIndicatorConfig;
+    //   if (tempConfig.steps) {
+    //     tempConfig.steps[1].tagConfig.type = 'success';
+    //     tempConfig.steps[2].tagConfig.type = 'primary';
+    //   }
+    //   this.progressIndicator.updateProgressIndicator(tempConfig);
+    this.router.navigateByUrl(this.getNextButtonLink);
+    //NOTE: No need to deal with cases not covered above, since those will result in navigation!
+  }
+
   /**
    * Getter for the previous page button
    */
@@ -95,7 +122,7 @@ export class WorkInformationComponent implements OnInit {
     return (
       this.translate.currentLang +
       '/' +
-      this.translate.instant('ROUTES.BackgroundInfo')
+      this.translate.instant('ROUTES.PersonalInfo')
     );
   }
 
@@ -107,9 +134,9 @@ export class WorkInformationComponent implements OnInit {
     );
   }
 
-  /**
+/**
  * Getter for the main page link
- */
+*/
   get getMainPageLink() {
     const curLang = this.translate.currentLang;
     this.translate.use(
