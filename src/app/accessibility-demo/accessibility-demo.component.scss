@@ -20,10 +20,9 @@
       margin: 24px 24px 24px 0;
     }
 
-    @media (max-width: 979px) {
-      margin-left: 40px;
-      margin-right: 40px;
-    }
+    // @media (max-width: 979px) {
+    //   margin-right: 40px;
+    // }
 
     @media (max-width: 412px) {
       //set here because of the min size of the date picker

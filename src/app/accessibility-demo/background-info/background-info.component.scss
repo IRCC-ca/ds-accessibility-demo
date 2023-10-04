@@ -1,4 +1,6 @@
 @use "../accessibility-demo.component.scss";
+@use '../../../../node_modules/@ircc-ca/ds-sdc-core/util/device';
+
 .body {
   max-width: 628px;
 }
@@ -7,4 +9,16 @@
   justify-content: space-between;
   margin-top: 64px;
   max-width: 628px;
+  @include device.in-phone-layout() {
+    flex-direction: column;
+  }
+  // ::ng-deep {
+  //   ircc-cl-lib-button {
+  //     button {
+  //       @include device.in-phone-layout() {
+  //         // width: 328px;
+  //       }
+  //     }
+  //   }
+  // }
 }
