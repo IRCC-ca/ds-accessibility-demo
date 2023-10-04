@@ -6,13 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { WorkInformationComponent } from './work-information/work-information.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'background-information', component: BackgroundInfoComponent }, //English
-  { path: 'informations-préliminaires', component: BackgroundInfoComponent }, //French
-  { path: 'personal-information', component: PersonalInformationComponent }, //English
-  { path: 'informations-personnelles', component: PersonalInformationComponent }, //French
-  { path: 'work-information', component: WorkInformationComponent }, //English
-  { path: 'information-de-travail', component: WorkInformationComponent }, //French
+  { path: '', component: HomeComponent, title: 'ROUTES.Home' },
+  { path: 'background-information', component: BackgroundInfoComponent, title: 'ROUTES.BackgroundInfo' }, //English
+  { path: 'informations-préliminaires', component: BackgroundInfoComponent, title: 'ROUTES.BackgroundInfo' }, //French
+  { path: 'personal-information', component: PersonalInformationComponent, title: 'ROUTES.PersonalInfo' }, //English
+  { path: 'informations-personnelles', component: PersonalInformationComponent, title: 'ROUTES.PersonalInfo' }, //French
+  { path: 'work-information', component: WorkInformationComponent, title: 'ROUTES.WorkInfo' }, //English
+  { path: 'information-de-travail', component: WorkInformationComponent, title: 'ROUTES.WorkInfo' }, //French
 ];
 
 @NgModule({
