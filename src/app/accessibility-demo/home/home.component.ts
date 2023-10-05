@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
     private translate: TranslateService,
     private altLang: LanguageSwitchService,) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.altLang.setAltLangLink('Home');
   }
 
   nextPage() {

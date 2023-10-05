@@ -37,8 +37,7 @@ export class BackgroundInfoComponent implements OnInit {
     private router: Router,
     private formService: AccessbilityDemoFormStateService,
     private translate: TranslateService,
-    private altLang: LanguageSwitchService,
-    private lang: LanguageSwitchService
+    private altLang: LanguageSwitchService
   ) { }
 
   @HostListener('window:resize', ['$event'])
@@ -52,7 +51,7 @@ export class BackgroundInfoComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     this.updateProgressBarOrientation();
 
-    this.lang.setAltLangLink('background-information');
+    this.altLang.setAltLangLink('BackgroundInfo');
     // this.altLang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();

@@ -288,7 +288,7 @@ export class PersonalInformationComponent implements OnInit {
     private formService: AccessbilityDemoFormStateService,
     private labelButton: LabelButtonService,
     private elementRef: ElementRef,
-    private lang: LanguageSwitchService
+    private langService: LanguageHeaderFooterSwitchService
   ) { }
 
   @HostListener('window:resize', ['$event'])
@@ -297,7 +297,7 @@ export class PersonalInformationComponent implements OnInit {
     this.updateProgressBarOrientation();
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     /**
      * Set local storage form data when form values change after init so we're not setting and getting at the same time
      *
@@ -320,13 +320,13 @@ export class PersonalInformationComponent implements OnInit {
       }
     });
 
-    this.lang.setAltLangLink('personal-information');
-    // this.lang.getAltLangLink().subscribe((altLang: string) => {
+    this.altLang.setAltLangLink('PersonalInfo');
+    // this.altLang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
     //   console.log(this.altLangURL);
     // });
-    // this.languageSwitchButton.languageClickObs$.subscribe((response) => {
+    // this.langService.languageClickObs$.subscribe((response) => {
     //   console.log(response);
     //   if (response) this.changeLang(); //Has to ignore the first response.
     // });

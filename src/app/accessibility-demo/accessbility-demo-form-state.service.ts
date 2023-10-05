@@ -143,4 +143,56 @@ export class AccessbilityDemoFormStateService {
     }
     return this.formObs;
   }
+
+  navigationHandler(action: string) {
+    const curLang = this.translate.currentLang;
+    console.log(curLang);
+    console.log(this.router.url);
+    const lang = curLang === 'en-US' || curLang === 'en' ? 'en' : 'fr';
+
+    const homePage = '/' + lang //base route 
+    const backgroundInfoPage = '/' + lang +
+      '/' + this.translate.instant('ROUTES.BackgroundInfo');
+    const personalInfoPage = '/' + lang +
+      '/' + this.translate.instant('ROUTES.PersonalInfo');
+    const workInfoPage = '/' + lang +
+      '/' + this.translate.instant('ROUTES.WorkInfo');
+
+    switch (this.router.url) {
+      case homePage:
+        if (action === 'next') {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.BackgroundInfo'));
+        } else {
+          this.router.navigateByUrl(this.translate.currentLang)
+        }
+        break;
+      case backgroundInfoPage:
+        if (action === 'next') {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.PersonalInfo'));
+        } else {
+          this.router.navigateByUrl(this.translate.currentLang)
+        }
+        break;
+      case personalInfoPage:
+        if (action === 'next') {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.WorkInfo'));
+        } else {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.BackgroundInfo'));
+        }
+        break;
+      case workInfoPage:
+        if (action === 'next') {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.WorkInfo'));
+        } else {
+          this.router.navigateByUrl(lang +
+            '/' + this.translate.instant('ROUTES.PersonalInfo'));
+        }
+        break;
+    }
+  }
 }

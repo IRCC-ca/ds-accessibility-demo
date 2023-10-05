@@ -34,12 +34,11 @@ export class WorkInformationComponent implements OnInit {
     private router: Router,
     private formService: AccessbilityDemoFormStateService,
     private translate: TranslateService,
-    private altLang: LanguageSwitchService,
-    private lang: LanguageSwitchService
+    private altLang: LanguageSwitchService
   ) { }
 
   ngOnInit() {
-    this.lang.setAltLangLink('work-information');
+    this.altLang.setAltLangLink('WorkInfo');
     // this.lang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
