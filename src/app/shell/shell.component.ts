@@ -52,7 +52,7 @@ export class ShellComponent implements OnInit {
       curLang === 'en-US' || curLang === 'en' ? 'fr-FR' : 'en-US'
     );
     // Changes the html lang attribute
-    // console.log((curLang === "en-US") || (curLang === 'en') ? 'fr' : 'en');
+    console.log("changeLangFn",(curLang === "en-US") || (curLang === 'en') ? 'fr' : 'en');
     document.documentElement.lang =
       curLang === 'en-US' || curLang === 'en' ? 'fr' : 'en';
     // Pushes page into history to allow the use of the 'Back' button on browser

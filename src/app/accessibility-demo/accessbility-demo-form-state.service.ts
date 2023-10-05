@@ -161,36 +161,30 @@ export class AccessbilityDemoFormStateService {
     switch (this.router.url) {
       case homePage:
         if (action === 'next') {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.BackgroundInfo'));
+          this.router.navigateByUrl(backgroundInfoPage);
         } else {
-          this.router.navigateByUrl(this.translate.currentLang)
+          this.router.navigateByUrl(homePage)
         }
         break;
       case backgroundInfoPage:
         if (action === 'next') {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.PersonalInfo'));
+          this.router.navigateByUrl(personalInfoPage);
         } else {
-          this.router.navigateByUrl(this.translate.currentLang)
+          this.router.navigateByUrl(homePage)
         }
         break;
       case personalInfoPage:
         if (action === 'next') {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.WorkInfo'));
+          this.router.navigateByUrl(workInfoPage);
         } else {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.BackgroundInfo'));
+          this.router.navigateByUrl(backgroundInfoPage);
         }
         break;
       case workInfoPage:
         if (action === 'next') {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.WorkInfo'));
+          this.router.navigateByUrl(workInfoPage);
         } else {
-          this.router.navigateByUrl(lang +
-            '/' + this.translate.instant('ROUTES.PersonalInfo'));
+          this.router.navigateByUrl(personalInfoPage);
         }
         break;
     }
