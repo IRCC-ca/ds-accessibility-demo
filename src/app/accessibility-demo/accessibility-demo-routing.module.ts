@@ -8,7 +8,7 @@ import { WorkInformationComponent } from './work-information/work-information.co
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'ROUTES.Home' },
   { path: 'background-information', component: BackgroundInfoComponent, title: 'ROUTES.BackgroundInfo' }, //English
-  { path: 'informations-préliminaires', component: BackgroundInfoComponent, title: 'ROUTES.BackgroundInfo' }, //French
+  { path: 'informations-preliminaires', component: BackgroundInfoComponent, title: 'ROUTES.BackgroundInfo' }, //French
   { path: 'personal-information', component: PersonalInformationComponent, title: 'ROUTES.PersonalInfo' }, //English
   { path: 'informations-personnelles', component: PersonalInformationComponent, title: 'ROUTES.PersonalInfo' }, //French
   { path: 'work-information', component: WorkInformationComponent, title: 'ROUTES.WorkInfo' }, //English
