@@ -79,18 +79,15 @@ export class BackgroundInfoComponent implements OnInit {
   }
 
   nextPage() {
-    return this.router.navigateByUrl(
-      this.translate.currentLang +
-      '/' +
-      this.translate.instant('ROUTES.PersonalInfo')
-    );
+    this.formService.navigationHandler('next');
   }
 
   /**
    * Getter for the previous page button
    */
   previousPage() {
-    return this.router.navigateByUrl(this.translate.currentLang)
+    this.formService.navigationHandler('prev');
+
   }
 
   /**
