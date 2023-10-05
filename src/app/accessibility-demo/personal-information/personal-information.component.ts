@@ -318,7 +318,7 @@ export class PersonalInformationComponent implements OnInit {
       }
     });
 
-    this.altLang.setAltLangLink('PersonalInfo-alt');
+    this.altLang.setAltLangLink('PersonalInfo');
     // this.altLang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();

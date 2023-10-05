@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     private formService: AccessbilityDemoFormStateService) { }
 
   ngOnInit() {
-    this.altLang.setAltLangLink('Home-alt');
+    this.altLang.setAltLangLink('Home');
   }
 
   nextPage() {

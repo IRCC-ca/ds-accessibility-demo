@@ -38,7 +38,7 @@ export class WorkInformationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.altLang.setAltLangLink('WorkInfo-alt');
+    this.altLang.setAltLangLink('WorkInfo');
     // this.lang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
@@ -72,7 +72,7 @@ export class WorkInformationComponent implements OnInit {
     this.formService.navigationHandler('prev');
 
   }
-  
+
   ngOnDestroy() {
     this.routerSub?.unsubscribe();
     this.progressIndicatorSub?.unsubscribe();
