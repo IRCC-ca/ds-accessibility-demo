@@ -9,16 +9,15 @@
   justify-content: space-between;
   margin-top: 64px;
   max-width: 628px;
-  @include device.in-phone-layout() {
-    flex-direction: column;
+  @media (max-width: 372px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 116px;
+
+    ircc-cl-lib-button {
+      width: 100%;
+    }
   }
-  // ::ng-deep {
-  //   ircc-cl-lib-button {
-  //     button {
-  //       @include device.in-phone-layout() {
-  //         // width: 328px;
-  //       }
-  //     }
-  //   }
-  // }
 }
