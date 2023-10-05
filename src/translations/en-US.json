@@ -7,7 +7,10 @@
 		"Login-alt": "connexion",
 		"PersonalInfo": "personal-information",
 		"WorkInfo": "work-information",
-		"BackgroundInfo": "background-information"
+		"BackgroundInfo": "background-information",
+		"BackgroundInfo-alt": "background-information",
+		"WorkInfo-alt": "work-information",
+		"PersonalInfo-alt": "personal-information"
 	},
 	"Version": "Version",
 	"ERROR": {

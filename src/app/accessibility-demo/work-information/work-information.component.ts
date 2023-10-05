@@ -38,7 +38,7 @@ export class WorkInformationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.altLang.setAltLangLink('WorkInfo');
+    this.altLang.setAltLangLink('WorkInfo-alt');
     // this.lang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();

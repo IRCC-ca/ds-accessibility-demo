@@ -51,7 +51,7 @@ export class BackgroundInfoComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     this.updateProgressBarOrientation();
 
-    this.altLang.setAltLangLink('BackgroundInfo');
+    this.altLang.setAltLangLink('BackgroundInfo-alt');
     // this.altLang.getAltLangLink().subscribe((altLang: string) => {
     //   this.altPathKey = altLang;
     //   this.setAltLangURL();
