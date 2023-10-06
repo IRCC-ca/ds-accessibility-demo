@@ -1,12 +1,65 @@
 @use "../accessibility-demo.component.scss";
 
-.body {
-  max-width: 628px;
-}
+.page_container {
 
-.buttons_container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-  max-width: 628px;
+  .body {
+    max-width: 628px;
+  }
+  
+  .buttons_container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+    max-width: 628px;
+  }
+  
+  ::ng-deep {
+    ircc-cl-lib-input {
+      .input-wrapper {
+        form {
+          .input-container {
+            .input-text {
+              > ircc-cl-lib-label {
+                .label_container {
+                  .label {
+                    .label_field_container {
+                      .icon_container {
+                        > button {
+                          &:hover {
+                            border-radius: 50px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ::ng-deep {
+    ircc-cl-lib-radio-input {
+      form {
+        > ircc-cl-lib-label {
+          .label_container {
+            .label {
+              .label_field_container {
+                .icon_container {
+                  > button.touch_button {
+                    &:hover {
+                      border-radius: 50px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
