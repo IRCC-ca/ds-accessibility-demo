@@ -22,6 +22,12 @@
 	"AccessibilityDemo": {
 		"Title": "Accessibility Demo"
 	},
+	"Title": {
+		"Home": "Home",
+		"PersonalInfo": "Personal Information",
+		"WorkInfo": "Work Information",
+		"BackgroundInfo": "Background Information"
+	},
 	"ACC_DEMO": {
 		"MODAL_TITLE": "Steps",
 		"HAMBURGER_ARIA": "Open the progress indicator",
