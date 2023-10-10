@@ -6,13 +6,34 @@
     max-width: 628px;
   }
   
-  .buttons_container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 64px;
-    max-width: 628px;
-  }
+  // .buttons_container {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   margin-top: 64px;
+  //   // max-width: 628px;
+  // }
   
+  // ::ng-deep {
+  //   .buttons_container {
+  //     width: 100%;
+  //     .btn1 {
+  //       @media (max-width: 372px) {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
+  // ::ng-deep {
+  //   .buttons_container {
+  //     width: 100%;
+  //     .btn2 {
+  //       @media (max-width: 372px) {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
+
   ::ng-deep {
     ircc-cl-lib-input {
       .input-wrapper {

@@ -60,21 +60,21 @@
         justify-content: space-between;
         margin-top: 64px;
 
-        @media (max-width: 372px) {
+        @media (max-width: 525px) {
           display: flex;
           flex-direction: column-reverse;
           align-items: center;
           justify-content: space-between;
           height: 116px;
-
-          // .btn1 {
-          //   width: 100%;
-          // }
-
-          // .btn2 {
-          //   width: 100%;
-          // }
-          ircc-cl-lib-button {
+        }
+        width: 100%;
+        .btn1 {
+          @media (max-width: 525px) {
+            width: 100%;
+          }
+        }
+        .btn2 {
+          @media (max-width: 525px) {
             width: 100%;
           }
         }

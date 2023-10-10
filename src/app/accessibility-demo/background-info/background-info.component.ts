@@ -52,11 +52,6 @@ export class BackgroundInfoComponent implements OnInit {
     this.updateProgressBarOrientation();
 
     this.altLang.setAltLangLink('BackgroundInfo');
-    // this.altLang.getAltLangLink().subscribe((altLang: string) => {
-    //   this.altPathKey = altLang;
-    //   this.setAltLangURL();
-    //   console.log(this.altLangURL);
-    // });
 
     this.formService.updateSelected(0);
     //if the page has moved to this one via a back or forward browser button, this detects the move and updates the page.

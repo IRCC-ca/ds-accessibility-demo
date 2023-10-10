@@ -319,15 +319,6 @@ export class PersonalInformationComponent implements OnInit {
     });
 
     this.altLang.setAltLangLink('PersonalInfo');
-    // this.altLang.getAltLangLink().subscribe((altLang: string) => {
-    //   this.altPathKey = altLang;
-    //   this.setAltLangURL();
-    //   console.log(this.altLangURL);
-    // });
-    // this.langService.languageClickObs$.subscribe((response) => {
-    //   console.log(response);
-    //   if (response) this.changeLang(); //Has to ignore the first response.
-    // });
 
     this.progressIndicatorSub =
       this.formService.progressIndicatorObs$.subscribe((response: any) => {
