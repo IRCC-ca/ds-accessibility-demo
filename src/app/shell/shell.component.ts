@@ -3,8 +3,10 @@ import { Router } from '@angular/router';
 import { LanguageSwitchService } from '@app/@shared/language-switch/language-switch.service';
 import { TranslateService } from '@ngx-translate/core';
 
+
 import { Location } from '@angular/common';
 import { LanguageHeaderFooterSwitchService } from 'ircc-ds-angular-component-library';
+import { environment } from '@env/environment';
 
 export enum Languages {
   English = 'en',
@@ -29,7 +31,7 @@ export class ShellComponent implements OnInit {
   language: string = this.translate.currentLang;
   /** Boolean for whether the current window size is mobile or not */
   isMobile = false;
-
+  dateModified = environment.dateModified;
   constructor(
     private translate: TranslateService,
     private altLang: LanguageSwitchService,

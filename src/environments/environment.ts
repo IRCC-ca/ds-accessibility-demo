@@ -1,10 +1,12 @@
+import LASTDATEMODIFIED from '../assets/date-modified.json';
+
 export const environment = {
   production: false,
   version: '1.0.0' + '-dev',
   serverUrl: '/api',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US', 'fr-FR'],
-
+  dateModified: LASTDATEMODIFIED.LASTDATEMODIFIED,
   baseUrl: '',
 
   CognitoRegion: '',

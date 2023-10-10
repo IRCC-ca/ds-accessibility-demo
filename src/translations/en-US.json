@@ -13,11 +13,12 @@
 		"PersonalInfo-alt": "personal-information"
 	},
 	"Version": "Version",
+	"Home": {
+		"DateModified": "Date Modified",
+		"BeginTask": "Begin Task"
+	},
 	"ERROR": {
 		"requiredRadioError": "This field is required"
-	},
-	"Home": {
-		"BeginTask": "Begin Task"
 	},
 	"AccessibilityDemo": {
 		"Title": "Accessibility Demo"

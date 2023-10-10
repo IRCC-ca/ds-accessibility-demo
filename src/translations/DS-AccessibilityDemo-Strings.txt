@@ -5,6 +5,7 @@ ROUTES.Home-alt	acceuil	home
 ROUTES.Login	login	connexion
 ROUTES.Login-alt	connexion	login
 Version	Version	Version
+Home.DateModified	Date Modified	Date de modification
 ERROR.requiredRadioError	This field is required	Ce champ est obligatoire
 Home.BeginTask	Begin Task	Commencer la tâche
 AccessibilityDemo.Title	Accessibility Demo	Demo d'accessibilité
