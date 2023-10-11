@@ -270,10 +270,6 @@ export class PersonalInformationComponent implements OnInit {
     inlineLabel: 'ACC_DEMO.PERSONAL_INFO.DECLARATION.INLINE_LABEL',
     errorMessages: [
       {
-        key: 'required',
-        errorLOV: 'ACC_DEMO.ERRORS.DECLARATION_REQUIRED'
-      },
-      {
         key: 'requiredTrue',
         errorLOV: 'ACC_DEMO.ERRORS.DECLARATION_REQUIRED'
       }
