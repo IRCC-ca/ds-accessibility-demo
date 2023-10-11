@@ -11,20 +11,19 @@ import {
   IBannerConfig,
   ICheckBoxComponentConfig,
   IDatePickerConfig,
-  IIconButtonComponentConfig,
   IInputComponentConfig,
   IProgressIndicatorConfig,
   IRadioInputComponentConfig,
   ISelectConfig,
   ISelectOptionsConfig,
   LabelButtonService,
-  LanguageHeaderFooterSwitchService
 } from 'ircc-ds-angular-component-library';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription, first } from 'rxjs';
 import { LanguageSwitchService } from '@app/@shared/language-switch/language-switch.service';
 import { AccessbilityDemoFormStateService, IDemoFormDataInterface } from '../accessbility-demo-form-state.service';
+import { requiredTrueValidator } from '@app/@shared/shared-validators';
 
 
 export interface ICityOfBirth {
@@ -357,18 +356,12 @@ export class PersonalInformationComponent implements OnInit {
       this.dateOfBirthDatePickerConfig.id + '_yearControl',
       new FormControl('', Validators.required)
     );
+    this.form.addControl(this.cityOfBirthSelectConfig.id, new FormControl('', Validators.required));
     this.form.addControl(
       this.countryOfBirthSelectConfig.id,
       new FormControl('', Validators.required)
     );
-    this.form.addControl(
-      this.cityOfBirthSelectConfig.id,
-      new FormControl('', Validators.required)
-    );
-    this.form.addControl(
-      this.declarationCheckboxConfig.id,
-      new FormControl('', Validators.required)
-    );
+    this.form.addControl(this.declarationCheckboxConfig.id, new FormControl('', [Validators.required, requiredTrueValidator()]));
 
     //Watch for changes in the country of birth select:
     this.form
